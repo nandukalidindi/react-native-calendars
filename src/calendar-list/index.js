@@ -57,7 +57,7 @@ class CalendarList extends Component {
   static defaultProps = {
     horizontal: false,
     calendarWidth: width,
-    calendarHeight: 360,
+    calendarHeight: 560, // 360 + (8 * 4 * 5)
     pastScrollRange: 50,
     futureScrollRange: 50,
     showScrollIndicator: false,
@@ -126,7 +126,7 @@ class CalendarList extends Component {
       for (let i = 0; i < days.length; i++) {
         week = Math.floor(i / 7);
         if (dateutils.sameDate(days[i], day)) {
-          scrollAmount += 46 * week;
+          scrollAmount += 78 * week;  // (46 + (8 * 2))
           break;
         }
       }

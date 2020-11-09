@@ -12,7 +12,7 @@ import {VelocityTracker} from '../input';
 import {AGENDA_CALENDAR_KNOB} from '../testIDs';
 
 
-const HEADER_HEIGHT = 104;
+const HEADER_HEIGHT = 136; // (104 + ((4 * 8));
 const KNOB_HEIGHT = 24;
 //Fallback for react-native-web or when RN version is < 0.44
 const {Text, View, Dimensions, Animated, ViewPropTypes} = ReactNative;
@@ -150,7 +150,7 @@ export default class AgendaView extends Component {
   }
 
   calendarOffset() {
-    return 96 - (this.viewHeight / 2);
+    return 104 - (this.viewHeight / 2); // 96 + ( Math.floor(4 / 4) * 8 )
   }
 
   initialScrollPadPosition = () => {
